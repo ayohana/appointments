@@ -5,6 +5,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/scripts.js"></script>
   </head>
 
@@ -26,7 +27,6 @@
           <label for="appointmentReason">Reason for appointment</label>
           <input type="name" class="form-control" id="appointmentReason" aria-describedby="appointmentReason" placeholder="Why would you like to see me?">
         </div>
-
 
         <div class="form-group">
           <label for="dates">Please select your preferred days and time</label>
@@ -75,8 +75,28 @@
           <small id="timeHelp" class="form-text text-muted">Each appointment lasts for about an hour.</small>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm">Submit</button>
       </form>
+    </div>
+
+    <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="confirmLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmLabel">Submission Confirmation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You have successfully submitted an appointment request.</p>
+            <small id="confirmHelp" class="text-muted">*Please wait for 2-3 business days for your final appointment confirmation date and time via your email.</small>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
 
   </body>
